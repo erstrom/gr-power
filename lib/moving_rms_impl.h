@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /* 
- * Copyright 2017 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2017 Erik Stromdahl <erik.stromdahl@gmail.com>.
  * 
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,6 +22,7 @@
 #define INCLUDED_POWER_MOVING_RMS_IMPL_H
 
 #include <power/moving_rms.h>
+#include <cstdarg>
 
 namespace gr {
   namespace power {
@@ -29,10 +30,15 @@ namespace gr {
     class moving_rms_impl : public moving_rms
     {
      private:
-      // Nothing to declare in this block.
+
+      size_t history_len;
+      float square_sum;
+
+      int calc_average_pwr(int n_items, const gr_complex *in, float *out);
+      static void dbg_log(const char* fmt...);
 
      public:
-      moving_rms_impl();
+      moving_rms_impl(size_t history_len);
       ~moving_rms_impl();
 
       // Where all the action really happens

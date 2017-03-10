@@ -1,6 +1,6 @@
 /* -*- c++ -*- */
 /* 
- * Copyright 2017 <+YOU OR YOUR COMPANY+>.
+ * Copyright 2017 Erik Stromdahl <erik.stromdahl@gmail.com>.
  * 
  * This is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,7 +46,7 @@ namespace gr {
        * class. power::moving_rms::make is the public interface for
        * creating new instances.
        */
-      static sptr make();
+      static sptr make(size_t history_len);
     };
 
   } // namespace power
