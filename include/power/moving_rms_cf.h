@@ -29,7 +29,7 @@ namespace gr {
   namespace power {
 
     /*!
-     * \brief <+description of block+>
+     * \brief Moving RMS average power
      * \ingroup power
      *
      */
@@ -39,12 +39,10 @@ namespace gr {
       typedef boost::shared_ptr<moving_rms_cf> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of power::moving_rms_cf.
+       * \brief Make a moving RMS calc. block.
+       * \param history_len length of the moving average filter.
        *
-       * To avoid accidental use of raw pointers, power::moving_rms_cf's
-       * constructor is in a private implementation
-       * class. power::moving_rms_cf::make is the public interface for
-       * creating new instances.
+       * MA (Moving Average) calculation of an RMS value.
        */
       static sptr make(size_t history_len);
     };
