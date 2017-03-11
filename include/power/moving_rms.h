@@ -19,8 +19,8 @@
  */
 
 
-#ifndef INCLUDED_POWER_MOVING_RMS_H
-#define INCLUDED_POWER_MOVING_RMS_H
+#ifndef INCLUDED_POWER_MOVING_RMS_CF_H
+#define INCLUDED_POWER_MOVING_RMS_CF_H
 
 #include <power/api.h>
 #include <gnuradio/sync_block.h>
@@ -33,17 +33,17 @@ namespace gr {
      * \ingroup power
      *
      */
-    class POWER_API moving_rms : virtual public gr::sync_block
+    class POWER_API moving_rms_cf : virtual public gr::sync_block
     {
      public:
-      typedef boost::shared_ptr<moving_rms> sptr;
+      typedef boost::shared_ptr<moving_rms_cf> sptr;
 
       /*!
-       * \brief Return a shared_ptr to a new instance of power::moving_rms.
+       * \brief Return a shared_ptr to a new instance of power::moving_rms_cf.
        *
-       * To avoid accidental use of raw pointers, power::moving_rms's
+       * To avoid accidental use of raw pointers, power::moving_rms_cf's
        * constructor is in a private implementation
-       * class. power::moving_rms::make is the public interface for
+       * class. power::moving_rms_cf::make is the public interface for
        * creating new instances.
        */
       static sptr make(size_t history_len);
@@ -52,5 +52,5 @@ namespace gr {
   } // namespace power
 } // namespace gr
 
-#endif /* INCLUDED_POWER_MOVING_RMS_H */
+#endif /* INCLUDED_POWER_MOVING_RMS_CF_H */
 

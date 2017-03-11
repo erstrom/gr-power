@@ -3,7 +3,7 @@
   <key>power_moving_rms</key>
   <category>[power]</category>
   <import>import power</import>
-  <make>power.moving_rms($history_len)</make>
+  <make>power.moving_rms_cf($history_len)</make>
   <param>
     <name>Averaging history length</name>
     <key>history_len</key>

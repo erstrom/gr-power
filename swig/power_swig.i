@@ -13,4 +13,4 @@
 
 
 %include "power/moving_rms.h"
-GR_SWIG_BLOCK_MAGIC2(power, moving_rms);
+GR_SWIG_BLOCK_MAGIC2(power, moving_rms_cf);

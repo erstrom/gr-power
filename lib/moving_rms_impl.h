@@ -18,8 +18,8 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#ifndef INCLUDED_POWER_MOVING_RMS_IMPL_H
-#define INCLUDED_POWER_MOVING_RMS_IMPL_H
+#ifndef INCLUDED_POWER_MOVING_RMS_CF_IMPL_H
+#define INCLUDED_POWER_MOVING_RMS_CF_IMPL_H
 
 #include <power/moving_rms.h>
 #include <cstdarg>
@@ -27,7 +27,7 @@
 namespace gr {
   namespace power {
 
-    class moving_rms_impl : public moving_rms
+    class moving_rms_cf_impl : public moving_rms_cf
     {
      private:
 
@@ -38,8 +38,8 @@ namespace gr {
       static void dbg_log(const char* fmt...);
 
      public:
-      moving_rms_impl(size_t history_len);
-      ~moving_rms_impl();
+      moving_rms_cf_impl(size_t history_len);
+      ~moving_rms_cf_impl();
 
       // Where all the action really happens
       int work(int noutput_items,
@@ -50,5 +50,5 @@ namespace gr {
   } // namespace power
 } // namespace gr
 
-#endif /* INCLUDED_POWER_MOVING_RMS_IMPL_H */
+#endif /* INCLUDED_POWER_MOVING_RMS_CF_IMPL_H */
 

@@ -30,15 +30,15 @@
 namespace gr {
   namespace power {
 
-    moving_rms::sptr
-    moving_rms::make(size_t history_len)
+    moving_rms_cf::sptr
+    moving_rms_cf::make(size_t history_len)
     {
       return gnuradio::get_initial_sptr
-        (new moving_rms_impl(history_len));
+        (new moving_rms_cf_impl(history_len));
     }
 
     void
-    moving_rms_impl::dbg_log(const char* fmt...)
+    moving_rms_cf_impl::dbg_log(const char* fmt...)
     {
         va_list args;
         char print_buf[100];
@@ -54,9 +54,9 @@ namespace gr {
     /*
      * The private constructor
      */
-    moving_rms_impl::moving_rms_impl(size_t history_len = (1 << 8))
+    moving_rms_cf_impl::moving_rms_cf_impl(size_t history_len = (1 << 8))
       : square_sum(0), history_len(history_len),
-        gr::sync_block("moving_rms",
+        gr::sync_block("moving_rms_cf",
               gr::io_signature::make(1, 1, sizeof(gr_complex)),
               gr::io_signature::make(1, 1, sizeof(float)))
     {
@@ -69,12 +69,12 @@ namespace gr {
     /*
      * Our virtual destructor.
      */
-    moving_rms_impl::~moving_rms_impl()
+    moving_rms_cf_impl::~moving_rms_cf_impl()
     {
     }
 
     int
-    moving_rms_impl::calc_average_pwr(int n_items, const gr_complex *in, float *out)
+    moving_rms_cf_impl::calc_average_pwr(int n_items, const gr_complex *in, float *out)
     {
         int i, j;
         float new_square, old_square;
@@ -103,7 +103,7 @@ namespace gr {
     }
 
     int
-    moving_rms_impl::work(int noutput_items,
+    moving_rms_cf_impl::work(int noutput_items,
         gr_vector_const_void_star &input_items,
         gr_vector_void_star &output_items)
     {
