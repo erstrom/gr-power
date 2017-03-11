@@ -23,7 +23,7 @@
 #endif
 
 #include <gnuradio/io_signature.h>
-#include "moving_rms_impl.h"
+#include "moving_rms_cf_impl.h"
 #include <cstdio>
 #include <cmath>
 

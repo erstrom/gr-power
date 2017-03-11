@@ -21,7 +21,7 @@
 #ifndef INCLUDED_POWER_MOVING_RMS_CF_IMPL_H
 #define INCLUDED_POWER_MOVING_RMS_CF_IMPL_H
 
-#include <power/moving_rms.h>
+#include <power/moving_rms_cf.h>
 #include <cstdarg>
 
 namespace gr {

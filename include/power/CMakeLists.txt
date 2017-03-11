@@ -22,5 +22,5 @@
 ########################################################################
 install(FILES
     api.h
-    moving_rms.h DESTINATION include/power
+    moving_rms_cf.h DESTINATION include/power
 )
