@@ -9,8 +9,11 @@
 
 %{
 #include "power/moving_rms_cf.h"
+#include "power/moving_rms_ff.h"
 %}
 
 
 %include "power/moving_rms_cf.h"
 GR_SWIG_BLOCK_MAGIC2(power, moving_rms_cf);
+%include "power/moving_rms_ff.h"
+GR_SWIG_BLOCK_MAGIC2(power, moving_rms_ff);

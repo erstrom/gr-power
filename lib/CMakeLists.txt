@@ -27,6 +27,7 @@ link_directories(${Boost_LIBRARY_DIRS})
 
 list(APPEND power_sources
     moving_rms_cf_impl.cc
+    moving_rms_ff_impl.cc
 )
 
 set(power_sources "${power_sources}" PARENT_SCOPE)

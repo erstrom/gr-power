@@ -3,7 +3,22 @@
   <key>power_moving_rms</key>
   <category>[power]</category>
   <import>import power</import>
-  <make>power.moving_rms_cf($history_len)</make>
+  <make>power.moving_rms_$(type.fcn)f($history_len)</make>
+  <param>
+    <name>Input Type</name>
+    <key>type</key>
+    <type>enum</type>
+    <option>
+      <name>Complex</name>
+      <key>complex</key>
+      <opt>fcn:c</opt>
+    </option>
+    <option>
+      <name>Float</name>
+      <key>float</key>
+      <opt>fcn:f</opt>
+    </option>
+  </param>
   <param>
     <name>Averaging history length</name>
     <key>history_len</key>
@@ -11,7 +26,7 @@
   </param>
   <sink>
     <name>in</name>
-    <type>complex</type>
+    <type>$type</type>
   </sink>
   <source>
     <name>out</name>
