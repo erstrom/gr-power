@@ -54,11 +54,11 @@ namespace gr {
     /*
      * The private constructor
      */
-    moving_rms_cf_impl::moving_rms_cf_impl(size_t history_len = (1 << 8))
-      : square_sum(0), history_len(history_len),
-        gr::sync_block("moving_rms_cf",
+    moving_rms_cf_impl::moving_rms_cf_impl(size_t history_len)
+      : gr::sync_block("moving_rms_cf",
               gr::io_signature::make(1, 1, sizeof(gr_complex)),
-              gr::io_signature::make(1, 1, sizeof(float)))
+              gr::io_signature::make(1, 1, sizeof(float))),
+        history_len(history_len), square_sum(0)
     {
         if (!history_len)
             history_len = 1;
@@ -73,10 +73,10 @@ namespace gr {
     {
     }
 
-    int
+    void
     moving_rms_cf_impl::calc_average_pwr(int n_items, const gr_complex *in, float *out)
     {
-        int i, j;
+        size_t i;
         float new_square, old_square;
 
         for (i = this->history_len - 1; i < n_items + this->history_len - 1; i++) {

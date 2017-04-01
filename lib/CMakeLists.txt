@@ -30,6 +30,8 @@ list(APPEND power_sources
     moving_rms_ff_impl.cc
 )
 
+add_definitions(-Wall -Wextra)
+
 set(power_sources "${power_sources}" PARENT_SCOPE)
 if(NOT power_sources)
 	MESSAGE(STATUS "No C++ sources... skipping lib/")

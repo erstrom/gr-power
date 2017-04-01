@@ -34,7 +34,7 @@ namespace gr {
       size_t history_len;
       float square_sum;
 
-      int calc_average_pwr(int n_items, const gr_complex *in, float *out);
+      void calc_average_pwr(int n_items, const gr_complex *in, float *out);
       static void dbg_log(const char* fmt...);
 
      public:
