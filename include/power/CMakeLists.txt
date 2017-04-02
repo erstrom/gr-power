@@ -22,5 +22,6 @@
 ########################################################################
 install(FILES
     api.h
-    moving_rms_cf.h moving_rms_ff.h DESTINATION include/power
+    moving_rms_cf.h moving_rms_ff.h
+    power_stats.h DESTINATION include/power
 )

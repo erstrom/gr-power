@@ -28,6 +28,7 @@ link_directories(${Boost_LIBRARY_DIRS})
 list(APPEND power_sources
     moving_rms_cf_impl.cc
     moving_rms_ff_impl.cc
+    power_stats_impl.cc
 )
 
 add_definitions(-Wall -Wextra)

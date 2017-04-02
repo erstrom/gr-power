@@ -18,5 +18,6 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    power_moving_rms.xml DESTINATION share/gnuradio/grc/blocks
+    power_moving_rms.xml
+    power_power_stats.xml DESTINATION share/gnuradio/grc/blocks
 )

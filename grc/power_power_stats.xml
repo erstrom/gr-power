@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<block>
+  <name>power_stats</name>
+  <key>power_power_stats</key>
+  <category>[power]</category>
+  <import>import power</import>
+  <make>power.power_stats($low_pwr_threshold, $high_pwr_threshold)</make>
+  <param>
+    <name>Low power threshold</name>
+    <key>low_pwr_threshold</key>
+    <type>float</type>
+  </param>
+  <param>
+    <name>High power threshold</name>
+    <key>high_pwr_threshold</key>
+    <type>float</type>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+</block>
